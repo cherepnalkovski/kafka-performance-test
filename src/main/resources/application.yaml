@@ -1,0 +1,20 @@
+server.port: 9098
+
+spring:
+  application:
+    name: "arkcase-kafka-performace-testing"
+  kafka:
+    bootstrapAddress: "http://10.50.10.105:9092"
+    schemaRegistryAddress: "http://10.50.10.105:8081"
+    topic:
+      generatedMessages: "generated_messages"
+      group: "generic"
+    streams:
+      properties:
+        default:
+          key:
+            serde: "io.confluent.kafka.streams.serdes.avro.GenericAvroSerde"
+          value:
+            serde: "io.confluent.kafka.streams.serdes.avro.GenericAvroSerde"
+      state-dir: "/tmp/kafka-streams"
+      host: "http://10.50.10.105"
